@@ -37,7 +37,7 @@ const clearPurchasedCart = async () => {
   try {
     await Promise.all(
       orderedItems.map((item) =>
-        axios.delete(`http://localhost:5000/api/cart/${item.id}`)
+        axios.delete(`https://clothing-shop-server.onrender.com/api/cart/${item.id}`)
       )
     );
   } catch (err) {
@@ -97,7 +97,7 @@ const handleOrder = async () => {
 
   if (formData.payment === "COD") {
     try {
-      await axios.post("http://localhost:5000/orders", orderPayload);
+      await axios.post("https://clothing-shop-server.onrender.com/orders", orderPayload);
 
       await clearPurchasedCart();
 
@@ -116,7 +116,7 @@ const handleOrder = async () => {
   else if (formData.payment === "UPI") {
     try {
       const res = await axios.post(
-        "http://localhost:5000/payment/create-order",
+        "https://clothing-shop-server.onrender.com/payment/create-order",
         { amount }
       );
 
@@ -130,7 +130,7 @@ const handleOrder = async () => {
 
         handler: async function () {
           try {
-            await axios.post("http://localhost:5000/orders", orderPayload);
+            await axios.post("https://clothing-shop-server.onrender.com/orders", orderPayload);
 
             await clearPurchasedCart();
 

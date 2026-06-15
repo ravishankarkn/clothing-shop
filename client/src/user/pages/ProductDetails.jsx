@@ -39,7 +39,7 @@ const ProductDetails = () => {
   const fetchOneProduct = async () => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/products/${productId}`
+        `https://clothing-shop-server.onrender.com/products/${productId}`
       );
       setProduct(response.data[0]);
       setSelectedImage(response.data[0].image);
@@ -114,7 +114,7 @@ const ProductDetails = () => {
 
       // ✅ Save to backend (per-user in DB)
       await axios.post(
-        "http://localhost:5000/api/cart/add",
+        "https://clothing-shop-server.onrender.com/api/cart/add",
         {
           user_id: user.id,
           product_id: product.id,

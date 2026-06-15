@@ -17,7 +17,7 @@ const Users = () => {
 
   const fetchUsers = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/users");
+      const res = await axios.get("https://clothing-shop-server.onrender.com/users");
       setUsers(res.data);
     } catch (err) {
       console.log(err);
@@ -26,7 +26,7 @@ const Users = () => {
 
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/users/${id}`);
+      await axios.delete(`https://clothing-shop-server.onrender.com/users/${id}`);
       setUsers(users.filter((u) => u.id !== id));
     } catch (err) {
       console.log(err);
@@ -35,7 +35,7 @@ const Users = () => {
 
   const changeRole = async (id, role) => {
     try {
-      await axios.put(`http://localhost:5000/users/${id}/role`, {
+      await axios.put(`https://clothing-shop-server.onrender.com/users/${id}/role`, {
         role,
       });
       fetchUsers();

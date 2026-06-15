@@ -17,7 +17,7 @@ const Orders = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/orders")
+      .get("https://clothing-shop-server.onrender.com/orders")
       .then((res) => setOrders(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -25,7 +25,7 @@ const Orders = () => {
   const handleStatusChange = async (orderId, newStatus) => {
     try {
       await axios.put(
-        `http://localhost:5000/orders/${orderId}/status`,
+        `https://clothing-shop-server.onrender.com/orders/${orderId}/status`,
         { status: newStatus }
       );
 

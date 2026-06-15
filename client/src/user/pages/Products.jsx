@@ -40,7 +40,7 @@ const Products = () => {
 
         const response =
           await axios.get(
-            "http://localhost:5000/products"
+            "https://clothing-shop-server.onrender.com/products"
           );
 
         setProducts(

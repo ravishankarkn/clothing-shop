@@ -52,7 +52,7 @@ const Login = () => {
         const response =
           await axios.post(
 
-            "http://localhost:5000/auth/login",
+            "https://clothing-shop-server.onrender.com/auth/login",
 
             {
               email: formData.email.trim().toLowerCase(),
@@ -97,7 +97,7 @@ const Login = () => {
         const response =
           await axios.post(
 
-            "http://localhost:5000/auth/register",
+            "https://clothing-shop-server.onrender.com/auth/register",
 
             {
               name: formData.name.trim(),
@@ -174,7 +174,7 @@ const Login = () => {
       const response =
         await axios.post(
 
-          "http://localhost:5000/auth/verify",
+          "https://clothing-shop-server.onrender.com/auth/verify",
 
           {
             email: verifyEmail,
@@ -256,7 +256,7 @@ const Login = () => {
         const response =
           await axios.post(
 
-            "http://localhost:5000/auth/forgot-password",
+            "https://clothing-shop-server.onrender.com/auth/forgot-password",
 
             {
               email:
@@ -310,7 +310,7 @@ const Login = () => {
         const response =
           await axios.post(
 
-            "http://localhost:5000/auth/reset-password",
+            "https://clothing-shop-server.onrender.com/auth/reset-password",
 
             {
               email: verifyEmail,
@@ -402,7 +402,7 @@ const Login = () => {
 
         await axios.post(
 
-          "http://localhost:5000/auth/forgot-password",
+          "https://clothing-shop-server.onrender.com/auth/forgot-password",
 
           {
             email: verifyEmail

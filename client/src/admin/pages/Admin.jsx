@@ -31,9 +31,9 @@ const Admin = () => {
   const fetchDashboardData = async () => {
     try {
       const [productsRes, ordersRes, usersRes] = await Promise.all([
-        axios.get("http://localhost:5000/products"),
-        axios.get("http://localhost:5000/orders"),
-        axios.get("http://localhost:5000/users"),
+        axios.get("https://clothing-shop-server.onrender.com/products"),
+        axios.get("https://clothing-shop-server.onrender.com/orders"),
+        axios.get("https://clothing-shop-server.onrender.com/users"),
       ]);
 
       const products = productsRes.data || [];

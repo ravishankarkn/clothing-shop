@@ -60,7 +60,7 @@ const AddProduct = () => {
 
         await axios.post(
 
-          "http://localhost:5000/products/add-product",
+          "https://clothing-shop-server.onrender.com/products/add-product",
 
           productData
         );

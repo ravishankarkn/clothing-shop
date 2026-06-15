@@ -155,7 +155,7 @@ const Cart = () => {
         const res =
           await axios.get(
 
-            `http://localhost:5000/api/cart/${user.id}`
+            `https://clothing-shop-server.onrender.com/api/cart/${user.id}`
 
           );
 
@@ -401,7 +401,7 @@ useEffect(() => {
 
                               await axios.delete(
 
-                                `http://localhost:5000/api/cart/${item.id}`
+                                `https://clothing-shop-server.onrender.com/api/cart/${item.id}`
 
                               );
 

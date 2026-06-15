@@ -29,7 +29,7 @@ const AdminProducts = () => {
                 const response =
                     await axios.get(
 
-                        "http://localhost:5000/products"
+                        "https://clothing-shop-server.onrender.com/products"
                     );
 
                 setProducts(
@@ -51,7 +51,7 @@ const AdminProducts = () => {
 
                 await axios.delete(
 
-                    `http://localhost:5000/products/${id}`
+                    `https://clothing-shop-server.onrender.com/products/${id}`
                 );
 
                 toast.error(

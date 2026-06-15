@@ -63,7 +63,7 @@ const EditProduct = () => {
                 const response =
                     await axios.get(
 
-                        `http://localhost:5000/products/${productId}`
+                        `https://clothing-shop-server.onrender.com/${productId}`
                     );
 
                 setProductData(
@@ -87,7 +87,7 @@ const EditProduct = () => {
 
                 await axios.put(
 
-                    `http://localhost:5000/products/${productId}`,
+                    `https://clothing-shop-server.onrender.com/products/${productId}`,
 
                     productData
                 );
