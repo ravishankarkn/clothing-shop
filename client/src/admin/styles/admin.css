@@ -1,0 +1,1278 @@
+/* =====================
+   RESET
+===================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================
+   ADMIN LAYOUT
+===================== */
+
+.admin-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f5f5;
+  font-family: sans-serif;
+}
+
+/* =====================
+   SIDEBAR
+===================== */
+
+.admin-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background: white;
+  box-shadow: 3px 0 15px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  padding: 30px 24px;
+  gap: 8px;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.admin-sidebar h2 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.admin-sidebar a {
+  text-decoration: none;
+  color: #555;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 12px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.admin-sidebar a:hover {
+  background: #fff0ef;
+  color: #ff5e57;
+}
+
+.admin-sidebar a.active {
+  background: #fff0ef;
+  color: #ff5e57;
+}
+
+/* LOGOUT */
+
+.logout-btn {
+  margin-top: auto;
+  padding: 13px;
+  border: none;
+  border-radius: 30px;
+  background: black;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.logout-btn:hover {
+  background: #ff5e57;
+}
+
+/* =====================
+   ADMIN MAIN
+===================== */
+
+.admin-main {
+  margin-left: 240px;
+  flex: 1;
+  padding: 40px;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.admin-main h1 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 30px;
+}
+
+/* =====================
+   DASHBOARD CARDS
+===================== */
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.dashboard-card {
+  background: white;
+  padding: 28px 24px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.10);
+}
+
+.dashboard-card h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: gray;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.dashboard-card h1 {
+  font-size: 32px;
+  font-weight: 800;
+  color: #ff5e57;
+  margin: 0;
+}
+
+/* =====================
+   PRODUCTS HEADER
+===================== */
+
+.products-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.products-header h1 {
+  margin-bottom: 0;
+}
+
+/* ADD BUTTON */
+
+.add-btn {
+  padding: 12px 26px;
+  background: black;
+  color: white;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: background 0.2s;
+}
+
+.add-btn:hover {
+  background: #ff5e57;
+}
+
+/* =====================
+   RESPONSIVE — TABLET
+===================== */
+
+@media (max-width: 1024px) {
+
+  .dashboard-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 900px) {
+
+  .admin-sidebar {
+    width: 200px;
+    padding: 24px 16px;
+  }
+
+  .admin-main {
+    margin-left: 200px;
+    padding: 24px 20px;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+}
+
+/* =====================
+   RESPONSIVE — MOBILE
+===================== */
+
+@media (max-width: 640px) {
+
+  .admin-container {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    position: static;
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 16px;
+    gap: 8px;
+    overflow: visible;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  }
+
+  .admin-sidebar h2 {
+    width: 100%;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+  }
+
+  .admin-sidebar a {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+
+  .logout-btn {
+    margin-top: 0;
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+
+  .admin-main {
+    margin-left: 0;
+    padding: 20px 16px;
+    height: auto;
+  }
+
+  .dashboard-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .dashboard-card {
+    padding: 20px 16px;
+  }
+
+  .dashboard-card h1 {
+    font-size: 24px;
+  }
+
+}
+
+/* =====================
+   PRODUCTS TABLE
+===================== */
+
+.products-table {
+  width: 100%;
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border-collapse: collapse;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+}
+
+.products-table thead {
+  background: #111;
+}
+
+.products-table th {
+  padding: 16px 18px;
+  text-align: left;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.products-table td {
+  padding: 14px 18px;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 14px;
+  color: #333;
+  vertical-align: middle;
+}
+
+.products-table tbody tr {
+  transition: background 0.15s;
+}
+
+.products-table tbody tr:hover {
+  background: #fafafa;
+}
+
+.products-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* TABLE PRODUCT IMAGE */
+
+.table-product-image {
+  width: 56px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* PRODUCT TITLE CELL */
+
+.product-title-cell {
+  font-weight: 600;
+  color: #111;
+  max-width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ACTION BUTTONS */
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.edit-btn {
+  padding: 7px 16px;
+  background: #f0f0f0;
+  color: #111;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.edit-btn:hover {
+  background: #111;
+  color: white;
+}
+
+.delete-btn {
+  padding: 7px 16px;
+  background: #ffe8e8;
+  color: #e63946;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  white-space: nowrap;
+}
+
+.delete-btn:hover {
+  background: #e63946;
+  color: white;
+}
+
+/* TABLE SCROLL WRAPPER FOR MOBILE */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 20px;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  height: 5px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #ff5e57;
+}
+
+/* =====================
+   SEARCH BOX — ADMIN
+===================== */
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 400px;
+  height: 46px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+  border: 1.5px solid #eee;
+  margin-bottom: 6px;
+  transition: border-color 0.2s;
+}
+
+.search-box:focus-within {
+  border-color: #ff5e57;
+}
+
+.search-box input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 0 18px;
+  font-size: 14px;
+  background: transparent;
+  color: #111;
+}
+
+.search-box input::placeholder {
+  color: #aaa;
+}
+
+.search-box button {
+  width: 50px;
+  height: 100%;
+  border: none;
+  background: #ff5e57;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.search-box button:hover {
+  background: #111;
+}
+
+/* =====================
+   FILTER BUTTONS
+===================== */
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+
+.filter-buttons button {
+  padding: 9px 20px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 30px;
+  background: white;
+  color: #555;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-buttons button:hover {
+  border-color: #ff5e57;
+  color: #ff5e57;
+}
+
+.filter-buttons button.active {
+  background: black;
+  color: white;
+  border-color: black;
+  box-shadow: none;
+}
+
+.filter-buttons button.active:hover {
+  background: #ff5e57;
+  border-color: #ff5e57;
+}
+
+/* NO ORDERS */
+
+.no-orders {
+  text-align: center;
+  color: gray;
+  font-size: 16px;
+  margin-top: 60px;
+}
+
+/* =====================
+   RESPONSIVE — TABLET
+===================== */
+
+@media (max-width: 900px) {
+
+  .products-table {
+    min-width: 700px;
+  }
+
+  .search-box {
+    max-width: 100%;
+  }
+
+}
+
+/* =====================
+   RESPONSIVE — MOBILE
+===================== */
+
+@media (max-width: 640px) {
+
+  .products-header h1 {
+    font-size: 20px;
+  }
+
+  .add-btn {
+    padding: 10px 18px;
+    font-size: 13px;
+  }
+
+  .filter-buttons button {
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+
+  .products-table th,
+  .products-table td {
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
+  .table-product-image {
+    width: 44px;
+    height: 44px;
+  }
+
+}
+
+/* =====================
+   ADMIN ORDERS PAGE
+===================== */
+
+.order-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px 28px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+  transition: box-shadow 0.2s;
+}
+
+.order-card:hover {
+  box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+}
+
+/* ORDER HEADER */
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.order-id {
+  font-size: 16px;
+  font-weight: 800;
+  color: #111;
+}
+
+/* STATUS BADGES */
+
+.order-status {
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.order-status.pending {
+  background: #fff4e0;
+  color: #e07b00;
+}
+
+.order-status.processing {
+  background: #fff0ef;
+  color: #ff5e57;
+}
+
+.order-status.shipped {
+  background: #f0f0ff;
+  color: #3742fa;
+}
+
+.order-status.delivered {
+  background: #e6f9ee;
+  color: #1a9e4a;
+}
+
+.order-status.cancelled {
+  background: #ffe8e8;
+  color: #e63946;
+}
+
+/* ORDER INFO GRID */
+
+.order-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 18px;
+  background: #fafafa;
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.info-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.info-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+}
+
+.info-value.total {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ff5e57;
+}
+
+/* ORDER ADDRESS */
+
+.order-address {
+  background: #f9f9f9;
+  border-radius: 14px;
+  padding: 14px 18px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.order-address p {
+  font-size: 14px;
+  color: #444;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* ORDER ITEMS */
+
+.order-items {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.order-item {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: #f9f9f9;
+  border-radius: 14px;
+  padding: 12px 16px;
+}
+
+.order-item img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+  flex-shrink: 0;
+  border: 1px solid #f0f0f0;
+}
+
+.item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.item-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.item-meta {
+  font-size: 12px;
+  color: #888;
+  margin: 0;
+}
+
+.item-price {
+  font-size: 14px;
+  font-weight: 800;
+  color: #ff5e57;
+  margin: 0;
+  margin-top: 2px;
+}
+
+/* ORDER ACTIONS */
+
+.order-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-top: 16px;
+  border-top: 1px solid #f5f5f5;
+}
+
+.order-actions .info-label {
+  flex-shrink: 0;
+}
+
+.order-actions select {
+  padding: 9px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  background: white;
+  color: #111;
+  outline: none;
+  transition: border-color 0.2s;
+  appearance: auto;
+}
+
+.order-actions select:focus {
+  border-color: #ff5e57;
+}
+
+/* =====================
+   RESPONSIVE — TABLET
+===================== */
+
+@media (max-width: 900px) {
+
+  .order-card {
+    padding: 20px;
+  }
+
+  .order-info {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .order-id {
+    font-size: 15px;
+  }
+
+}
+
+/* =====================
+   RESPONSIVE — MOBILE
+===================== */
+
+@media (max-width: 640px) {
+
+  .order-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .order-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+  }
+
+  .order-info {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 12px 14px;
+  }
+
+  .order-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .order-item img {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+  }
+
+  .order-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .order-actions select {
+    width: 100%;
+  }
+
+}
+
+/* =====================
+   ADD / EDIT PRODUCT PAGE
+===================== */
+
+.add-product-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  font-family: sans-serif;
+}
+
+.add-product-form {
+  width: 100%;
+  max-width: 580px;
+  background: white;
+  border-radius: 24px;
+  padding: 40px 36px;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.09);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.add-product-form h1 {
+  font-size: 26px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 6px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* INPUTS */
+
+.add-product-form input,
+.add-product-form textarea,
+.add-product-form select {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1.5px solid #e8e8e8;
+  border-radius: 14px;
+  font-size: 14px;
+  outline: none;
+  color: #111;
+  background: #fafafa;
+  font-family: sans-serif;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.add-product-form input:focus,
+.add-product-form textarea:focus,
+.add-product-form select:focus {
+  border-color: #ff5e57;
+  background: white;
+}
+
+.add-product-form input::placeholder,
+.add-product-form textarea::placeholder {
+  color: #bbb;
+}
+
+.add-product-form textarea {
+  resize: vertical;
+  min-height: 100px;
+  line-height: 1.6;
+}
+
+/* FIELD LABELS */
+
+.add-product-form label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: -8px;
+}
+
+/* SUBMIT BUTTON */
+
+.add-product-form button[type="submit"],
+.add-product-form button {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 30px;
+  background: black;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 6px;
+}
+
+.add-product-form button[type="submit"]:hover,
+.add-product-form button:hover {
+  background: #ff5e57;
+}
+
+/* IMAGE PREVIEW */
+
+.image-preview {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1.5px solid #f0f0f0;
+  background: #fafafa;
+}
+
+/* FORM HINT TEXT */
+
+.form-hint {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: -10px;
+  padding-left: 4px;
+}
+
+/* =====================
+   RESPONSIVE — TABLET
+===================== */
+
+@media (max-width: 900px) {
+
+  .add-product-page {
+    padding: 30px 20px;
+  }
+
+  .add-product-form {
+    max-width: 100%;
+    padding: 32px 28px;
+  }
+
+  .add-product-form h1 {
+    font-size: 22px;
+  }
+
+}
+
+/* =====================
+   RESPONSIVE — MOBILE
+===================== */
+
+@media (max-width: 480px) {
+
+  .add-product-page {
+    padding: 20px 16px;
+  }
+
+  .add-product-form {
+    padding: 24px 18px;
+    border-radius: 20px;
+    gap: 13px;
+  }
+
+  .add-product-form h1 {
+    font-size: 20px;
+    padding-bottom: 14px;
+    margin-bottom: 4px;
+  }
+
+  .add-product-form input,
+  .add-product-form textarea,
+  .add-product-form select {
+    padding: 12px 14px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+
+  .add-product-form button[type="submit"],
+  .add-product-form button {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+}
+
+/* =====================
+   MANAGE USERS PAGE
+===================== */
+
+/* STATS ROW */
+
+.users-stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.user-stat-box {
+  flex: 1;
+  min-width: 120px;
+  background: white;
+  border-radius: 16px;
+  padding: 18px 22px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: transform 0.2s;
+}
+
+.user-stat-box:hover {
+  transform: translateY(-3px);
+}
+
+.user-stat-box span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.user-stat-box h3 {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ff5e57;
+  margin: 0;
+}
+
+/* USERS TABLE */
+
+.users-table th,
+.users-table td {
+  white-space: nowrap;
+}
+
+/* USER INDEX */
+
+.user-index {
+  color: #aaa;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* AVATAR + NAME CELL */
+
+.user-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #fff0ef;
+  color: #ff5e57;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.user-name-cell span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* EMAIL */
+
+.user-email {
+  font-size: 13px;
+  color: #666;
+}
+
+/* DATE */
+
+.user-date {
+  font-size: 13px;
+  color: #888;
+}
+
+/* ROLE BADGE */
+
+.role-badge {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.role-badge.admin {
+  background: #111;
+  color: white;
+}
+
+.role-badge.user {
+  background: #f0f0f0;
+  color: #555;
+}
+
+/* VERIFIED BADGE */
+
+.verified-badge {
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.verified-badge.yes {
+  background: #e6f9ee;
+  color: #1a9e4a;
+}
+
+.verified-badge.no {
+  background: #fff0ef;
+  color: #ff5e57;
+}
+
+/* =====================
+   RESPONSIVE — TABLET
+===================== */
+
+@media (max-width: 900px) {
+
+  .users-stats {
+    gap: 12px;
+  }
+
+  .user-stat-box {
+    padding: 14px 16px;
+  }
+
+  .user-stat-box h3 {
+    font-size: 22px;
+  }
+
+}
+
+/* =====================
+   RESPONSIVE — MOBILE
+===================== */
+
+@media (max-width: 640px) {
+
+  .users-stats {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .user-stat-box {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+  }
+
+  .user-stat-box h3 {
+    font-size: 20px;
+  }
+
+  .user-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+  }
+
+}
+
+/* =====================
+   USER ACTION BUTTONS
+===================== */
+
+.users-table td button {
+  border: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  margin-right: 8px;
+  white-space: nowrap;
+}
+
+/* MAKE ADMIN BUTTON */
+.users-table td button:first-child {
+  background: #111;
+  color: #fff;
+}
+
+.users-table td button:first-child:hover {
+  background: #000;
+  transform: scale(1.03);
+}
+
+/* REMOVE ADMIN BUTTON */
+.users-table td button:nth-child(2) {
+  background: #eaeaea;
+  color: #333;
+}
+
+.users-table td button:nth-child(2):hover {
+  background: #d6d6d6;
+  transform: scale(1.03);
+}
+
+/* DELETE BUTTON */
+.users-table td button:last-child {
+  background:white;
+  color: white;
+}
+
+.users-table td button:last-child:hover {
+  background:black;
+  transform: scale(1.03);
+}
+
+/* MOBILE */
+@media (max-width: 640px) {
+  .users-table td button {
+    display: block;
+    width: 100%;
+    margin-bottom: 6px;
+  }
+
+  .users-table td button:last-child {
+    margin-bottom: 0;
+  }
+}
