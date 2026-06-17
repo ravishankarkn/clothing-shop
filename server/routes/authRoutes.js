@@ -19,7 +19,17 @@ router.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
-    const cleanEmail = email.trim().toLowerCase();
+if (!email || !password || !name) {
+  return res.status(400).json({ message: "Missing fields" });
+}
+
+    const cleanEmail = (email || "").trim().toLowerCase();
+
+if (!cleanEmail) {
+  return res.status(400).json({ message: "Email required" });
+}
+
+console.log("OTP about to send to:", cleanEmail);
 
     db.query(
       "SELECT id FROM users WHERE email=?",
