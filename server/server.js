@@ -1,5 +1,10 @@
 require('dotenv').config(); // ← must be line 1
 
+
+console.log("EMAIL_USER:", process.env.EMAIL_USER);
+console.log("EMAIL_PASS:", process.env.EMAIL_PASS ? "loaded ✅" : "undefined ❌");
+
+
 const express = require("express");
 const cors = require("cors");
 const db = require("./config/db");
