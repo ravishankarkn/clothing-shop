@@ -2,13 +2,17 @@ const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
 host: "smtp-relay.brevo.com",
-port: 587,
-secure: false,
+port: 465,
+secure: true,
 
 auth: {
 user: process.env.SMTP_USER,
 pass: process.env.SMTP_PASS
-}
+},
+
+connectionTimeout: 10000,
+greetingTimeout: 10000,
+socketTimeout: 10000
 });
 
 const sendMail = async (email, otp) => {
@@ -18,17 +22,14 @@ try {
 console.log("OTP about to send to:", email);
 
 const info = await transporter.sendMail({
-  from: `"Clothing Shop" <${process.env.SMTP_USER}>`,
+  from: process.env.SMTP_USER,
   to: email,
   subject: "Verify Email",
 
   html: `
-    <div style="font-family: Arial; padding: 20px;">
-      <h2>Email Verification</h2>
-      <p>Your OTP is:</p>
-      <h1>${otp}</h1>
-      <p>Please use this OTP to continue.</p>
-    </div>
+    <h2>Email Verification</h2>
+    <p>Your OTP is:</p>
+    <h1>${otp}</h1>
   `
 });
 
@@ -36,7 +37,7 @@ console.log("Mail sent:", info.messageId);
 
 
 } catch (err) {
-console.log("Mail error:", err.message);
+console.error("Mail error:", err);
 throw err;
 }
 };
