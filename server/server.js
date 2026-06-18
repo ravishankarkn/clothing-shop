@@ -1,8 +1,6 @@
 require('dotenv').config(); // ← must be line 1
 
-
-console.log("SMTP_USER loaded:", !!process.env.SMTP_USER);
-console.log("SMTP_PASS loaded:", !!process.env.SMTP_PASS);
+console.log("BREVO_API_KEY loaded:", !!process.env.BREVO_API_KEY);
 
 const express = require("express");
 const cors = require("cors");

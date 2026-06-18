@@ -1,9 +1,11 @@
-const SibApiV3Sdk = require("@getbrevo/brevo");
+const brevo = require("@getbrevo/brevo");
 
-const apiInstance = new SibApiV3Sdk.TransactionalEmailsApi();
+const apiInstance = new brevo.TransactionalEmailsApi();
 
-SibApiV3Sdk.ApiClient.instance.authentications["api-key"].apiKey =
-process.env.BREVO_API_KEY;
+apiInstance.setApiKey(
+brevo.TransactionalEmailsApiApiKeys.apiKey,
+process.env.BREVO_API_KEY
+);
 
 const sendMail = async (email, otp) => {
 try {
